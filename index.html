@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!-- This first line tells the browser "this is a modern web page." -->
+<html lang="en">
+
+<!-- The HEAD holds behind-the-scenes info. Visitors don't see it on the page. -->
+<head>
+  <meta charset="UTF-8">
+  <!-- This line makes the page fit phone screens properly. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- The title shows in the browser tab and in Google results. -->
+  <title>Snoot & Co. | Personalized Gifts for Pet Lovers</title>
+  <meta name="description" content="Custom mugs, ornaments, and keepsakes made with your pet's photo. Printed on demand in the USA.">
+  <!-- This line connects our design file (styles.css) to this page. -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<!-- The BODY is everything visitors actually see. -->
+<body>
+
+  <!-- HEADER: the strip at the top with the store name and menu. -->
+  <header>
+    <a href="index.html" class="logo">🐾 Snoot &amp; Co.</a>
+    <nav>
+      <a href="#shop">Shop</a>
+      <a href="#how-it-works">How it works</a>
+      <a href="#about">About</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HERO: the big welcome message - the first thing people see. -->
+    <section id="hero">
+      <h1>Gifts as lovable as their snoot.</h1>
+      <p>Custom mugs, ornaments, and keepsakes made with your pet's photo.</p>
+      <a href="#shop" class="button">Shop gifts</a>
+    </section>
+
+    <!-- SHOP: the product cards are built automatically from products.js. -->
+    <section id="shop">
+      <h2>Shop</h2>
+      <p class="section-intro">Every gift is made to order with your pet's photo.</p>
+      <!-- This empty box gets filled with product cards by shop.js. -->
+      <div id="product-grid"></div>
+    </section>
+
+    <!-- HOW IT WORKS: three simple steps so customers aren't confused. -->
+    <section id="how-it-works">
+      <h2>How it works</h2>
+      <ol class="steps">
+        <li><span class="icon">🎁</span><strong>Pick a gift.</strong> Mug, ornament, blanket, and more.</li>
+        <li><span class="icon">📸</span><strong>Send your pet's photo.</strong> We'll design it for you.</li>
+        <li><span class="icon">🚚</span><strong>We print &amp; ship it.</strong> Made in the USA, delivered to your door.</li>
+      </ol>
+    </section>
+
+    <!-- ABOUT: a short, friendly story about the store. -->
+    <section id="about">
+      <h2>About Snoot &amp; Co.</h2>
+      <p>We believe every pet deserves to be celebrated. Each gift is made to order just for you - no warehouses, no waste.</p>
+    </section>
+
+  </main>
+
+  <!-- FOOTER: the bottom of the page, with links to the info pages. -->
+  <footer>
+    <nav class="footer-links">
+      <a href="shipping-returns.html">Shipping &amp; Returns</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <p>&copy; 2026 Snoot &amp; Co.</p>
+  </footer>
+
+  <!-- Load the product list first, then the program that builds the cards. -->
+  <script src="products.js"></script>
+  <script src="shop.js"></script>
+
+</body>
+</html>

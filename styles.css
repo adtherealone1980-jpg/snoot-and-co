@@ -1,0 +1,249 @@
+/* ==========================================================
+   Snoot & Co. - Store styles
+   CSS controls how the page LOOKS (colors, fonts, spacing).
+   Lines starting with slash-star are notes for humans; the browser ignores them.
+   ========================================================== */
+
+/* ---------- 1. Brand colors ----------
+   We name our colors once here, then reuse the names everywhere.
+   To rebrand the whole store, just change these values. */
+:root {
+  --cream:  #FFF8EF;  /* page background */
+  --cocoa:  #3B2A20;  /* main text */
+  --orange: #E8743B;  /* buttons and highlights */
+  --peach:  #FCE3D1;  /* soft background blocks */
+  --white:  #FFFFFF;
+  --radius: 16px;     /* how rounded the corners are */
+}
+
+/* ---------- 2. Page basics ---------- */
+* { box-sizing: border-box; }  /* makes sizes behave predictably */
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--cocoa);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+h1, h2 { line-height: 1.15; margin: 0 0 0.5em; }
+h1 { font-size: 2.4rem; }
+h2 { font-size: 1.8rem; text-align: center; }
+
+a { color: var(--orange); }
+
+/* Each section gets breathing room and a max width so lines aren't too long on big screens. */
+section {
+  padding: 56px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* ---------- 3. Header (top bar) ---------- */
+header {
+  position: sticky;   /* stays at the top while you scroll */
+  top: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;  /* on phones: name on top, menu underneath */
+  align-items: center;
+  gap: 4px;
+  padding: 14px 20px;
+  background: var(--cream);
+  border-bottom: 1px solid var(--peach);
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 1.3rem;
+  color: var(--cocoa);
+  text-decoration: none;
+  white-space: nowrap;   /* keeps the store name on one line */
+}
+
+nav a {
+  margin: 0 10px;
+  color: var(--cocoa);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* ---------- 4. Hero (big welcome area) ---------- */
+#hero {
+  text-align: center;
+  padding-top: 72px;
+  padding-bottom: 72px;
+}
+
+#hero p {
+  font-size: 1.15rem;
+  max-width: 520px;
+  margin: 0 auto 28px;
+}
+
+/* ---------- 5. Buttons ---------- */
+.button {
+  display: inline-block;
+  background: var(--orange);
+  color: var(--white);
+  padding: 14px 32px;
+  border-radius: 999px;   /* fully rounded "pill" shape */
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.15s;
+}
+.button:hover { transform: scale(1.05); }  /* grows slightly when hovered */
+
+/* ---------- 5b. Shop & product cards ---------- */
+.section-intro {
+  text-align: center;
+  margin: 0 auto 28px;
+  max-width: 520px;
+}
+
+#product-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.product-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;   /* keeps the picture inside the rounded corners */
+  box-shadow: 0 4px 14px rgba(59, 42, 32, 0.08);   /* soft shadow so cards "lift" off the page */
+  display: flex;
+  flex-direction: column;
+}
+
+.product-image {
+  position: relative;
+  background: var(--peach);
+  aspect-ratio: 1 / 1;   /* square picture area */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.product-image img { width: 100%; height: 100%; object-fit: cover; }
+.placeholder { font-size: 5rem; }
+
+.badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: var(--cocoa);
+  color: var(--cream);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.product-info {
+  padding: 18px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.product-info h3 { margin: 0 0 6px; font-size: 1.1rem; }
+.product-info p { margin: 0 0 16px; font-size: 0.95rem; flex-grow: 1; }
+
+.product-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.price { font-size: 1.3rem; font-weight: 800; }
+.product-bottom .button { padding: 10px 22px; font-size: 0.95rem; }
+
+/* Grey button used until a real Stripe link is added. */
+.button-disabled {
+  background: #C9BBAE;
+  cursor: not-allowed;
+}
+.button-disabled:hover { transform: none; }
+
+/* ---------- 6. How it works (3 steps) ---------- */
+.steps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 16px;
+}
+
+.steps li {
+  background: var(--peach);
+  border-radius: var(--radius);
+  padding: 24px;
+  text-align: center;
+}
+
+.steps .icon {
+  display: block;
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+/* ---------- 7. About ---------- */
+#about p {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ---------- 7b. Info pages (Shipping, Privacy, Contact) ---------- */
+.page {
+  max-width: 720px;   /* narrower so long text is easy to read */
+}
+.page h1 { font-size: 2.2rem; }
+.page h2 {
+  text-align: left;
+  font-size: 1.3rem;
+  margin-top: 1.8em;
+}
+.page li { margin-bottom: 6px; }
+
+/* Highlighted box, used for the holiday deadline */
+.notice {
+  background: var(--peach);
+  border-left: 5px solid var(--orange);
+  border-radius: 8px;
+  padding: 14px 18px;
+  margin: 20px 0;
+}
+
+.contact-cta { margin: 28px 0 8px; }
+.contact-email { font-weight: 700; word-break: break-all; }
+
+/* ---------- 8. Footer (bottom of page) ---------- */
+footer {
+  text-align: center;
+  padding: 32px 20px;
+  background: var(--cocoa);
+  color: var(--cream);
+  font-size: 0.9rem;
+}
+.footer-links a {
+  color: var(--cream);
+  margin: 0 10px;
+  display: inline-block;
+  padding: 4px 0;
+}
+
+/* ---------- 9. Bigger screens (tablets & computers) ----------
+   Everything above is for phones. These rules only kick in
+   when the screen is at least 700px wide. */
+@media (min-width: 700px) {
+  h1 { font-size: 3.4rem; }
+  header { flex-direction: row; justify-content: space-between; }  /* name left, menu right */
+  .steps { grid-template-columns: repeat(3, 1fr); }  /* steps side by side */
+  #product-grid { grid-template-columns: repeat(2, 1fr); }  /* 2 products per row */
+}
+
+/* ---------- 10. Large screens (computers) ---------- */
+@media (min-width: 1000px) {
+  #product-grid { grid-template-columns: repeat(3, 1fr); }  /* 3 products per row */
+}
