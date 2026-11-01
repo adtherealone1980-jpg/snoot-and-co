@@ -33,12 +33,15 @@ Buy button completes a Stripe test-mode purchase.
 - `products.js` - the product list (edit this to change products)
 - `shop.js` - builds product cards from products.js
 - `shipping-returns.html`, `privacy.html`, `contact.html` - info pages
+- `thank-you.html` - shown after checkout (once Stripe redirect is switched on)
 - `previews/` - screenshots for checking our work
 
 ## Store facts
 - Contact email: adtherealone@yahoo.com
 - Printify timing: production 2-7 business days + US shipping ~2-5 (we say 3-7)
 - Holiday cutoff shown to customers: December 4
+- Shipping: flat $6.99 per order, US only
+- Live site (once GitHub Pages is on): https://adtherealone1980-jpg.github.io/snoot-and-co/
 
 ## Stripe (TEST MODE) - account "Snoot & Co." acct_1UX4FSJEX18d0sxg
 Plan (from Stripe implementation planner): Payment Links (no-code) for the store,
@@ -56,21 +59,28 @@ No secret API keys are used or stored in this project - ever.
 
 Tax codes: txcd_99999999 (general goods); sweatshirt txcd_30011000 (clothing).
 All prices are tax-exclusive (tax added at checkout).
-Tax settings status: PENDING - head office address missing (owner sets in Dashboard).
+Tax settings: ACTIVE (test). Head office in Virginia. Test VA registration taxreg_1UX5XEJEX18d0sxgWDnNzFa7.
+Note: account default tax code is txcd_10202000 - always set tax_code explicitly on new products.
+Shipping product (flat $6.99/order): prod_VYBvzoP55mDNh8 / price_1UX5XuJEX18d0sxgen3HDGVn (tax code txcd_92010001)
 
-Payment Links (TEST) - all: US-only shipping address, required "petname" text field,
-qty 1-10, hosted confirmation asking buyer to email pet photo + order # + pet name.
-Sweatshirt link also has a required "size" dropdown (S-2XL).
-ornament plink_1UX4UkJEX18d0sxgCgcWNcQM | mug plink_1UX4VNJEX18d0sxgrQzaAPeN
-bandana plink_1UX4VgJEX18d0sxgNza5QPC9 | sweatshirt plink_1UX4VyJEX18d0sxgKdQVhiCd
-canvas plink_1UX4WBJEX18d0sxgdAZ9IxH6 | blanket plink_1UX4WKJEX18d0sxgPDWSZA3S
+Payment Links (TEST, CURRENT) - all: product line (qty 1-10) + flat $6.99 shipping line (qty 1),
+automatic_tax ON, US-only shipping address, required "petname" field, hosted confirmation
+asking buyer to email pet photo + order # + pet name. Sweatshirt also has required "size" dropdown.
+ornament plink_1UX5YAJEX18d0sxgZOH2tEYD | mug plink_1UX5YWJEX18d0sxg0cRp66N3
+bandana plink_1UX5YkJEX18d0sxgX9lHTv5x | sweatshirt plink_1UX5YsJEX18d0sxgUAHAgLuh
+canvas plink_1UX5Z5JEX18d0sxgW6rIhQSq | blanket plink_1UX5ZDJEX18d0sxgpoHIazjh
+(Old links plink_1UX4... were DEACTIVATED - they had no shipping.)
+
+Why shipping is a line item: Stripe MCP can't create/list Shipping Rates, and the owner's
+dashboard rate (shr_...J362GtwOV1...) was made in a DIFFERENT Stripe account/sandbox.
+All IDs for THIS account contain "JEX18d0sxg".
 
 ### Stripe TODO
-- [ ] Owner creates $6.99 "Standard shipping" rate in Dashboard -> attach to all 6 links
-- [ ] Owner activates Stripe Tax + sets head office address (Settings -> Tax). State = VIRGINIA (VA)
-- [ ] Add test VA registration (blocked until Tax is active), then enable automatic_tax on all 6 links
+- [x] Flat $6.99 shipping added (as a line item on each link)
+- [x] Stripe Tax active, head office in VIRGINIA (VA)
+- [x] Test VA registration added; automatic_tax ON for all 6 links
 - [ ] Owner registers for a VA sales tax certificate with Virginia Tax before live sales
-- [ ] After site is live: switch after_completion to redirect to our own thank-you page
+- [ ] After site is live: switch after_completion to redirect to thank-you.html
 - [ ] Optional: Settings -> Branding (logo/colors) for checkout + invoices
 - [ ] Before going live: recreate products/links in LIVE mode (test objects don't carry over)
 

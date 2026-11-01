@@ -31,7 +31,7 @@ const products = [
     emoji: "🎄",
     image: "",
     badge: "Holiday pick",
-    buyLink: "https://buy.stripe.com/test_bJe28s7Hmg8Tbci8wp0VO00"
+    buyLink: "https://buy.stripe.com/test_3cI14o3r6g8T3JQbIB0VO06"
   },
   {
     name: "Custom Pet Mug",
@@ -40,7 +40,7 @@ const products = [
     emoji: "☕",
     image: "",
     badge: "",
-    buyLink: "https://buy.stripe.com/test_8x200k4va6yj806eUN0VO01"
+    buyLink: "https://buy.stripe.com/test_cNi3cw8Lq9Kv6W27sl0VO07"
   },
   {
     name: "Personalized Pet Bandana",
@@ -49,7 +49,7 @@ const products = [
     emoji: "🐶",
     image: "",
     badge: "",
-    buyLink: "https://buy.stripe.com/test_eVqaEY8Lqg8TfsyaEx0VO02"
+    buyLink: "https://buy.stripe.com/test_4gM14o1iYaOz5RYdQJ0VO08"
   },
   {
     name: "\"Dog Mom\" / \"Cat Mom\" Sweatshirt",
@@ -58,7 +58,7 @@ const products = [
     emoji: "🧥",
     image: "",
     badge: "",
-    buyLink: "https://buy.stripe.com/test_fZueVed1G9Kv5RYh2V0VO03"
+    buyLink: "https://buy.stripe.com/test_cNieVee5KcWH1BI8wp0VO09"
   },
   {
     name: "Pet Portrait Canvas",
@@ -67,7 +67,7 @@ const products = [
     emoji: "🖼️",
     image: "",
     badge: "",
-    buyLink: "https://buy.stripe.com/test_fZu00k0eU9Kv5RY4g90VO04"
+    buyLink: "https://buy.stripe.com/test_aFa4gAaTybSD5RYbIB0VO0a"
   },
   {
     name: "Custom Pet Photo Blanket",
@@ -76,6 +76,6 @@ const products = [
     emoji: "🛋️",
     image: "",
     badge: "Holiday pick",
-    buyLink: "https://buy.stripe.com/test_28E9AUgdSbSDgwCaEx0VO05"
+    buyLink: "https://buy.stripe.com/test_8x2cN67HmcWHfsybIB0VO0b"
   }
 ];
