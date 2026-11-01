@@ -67,8 +67,9 @@ canvas plink_1UX4WBJEX18d0sxgdAZ9IxH6 | blanket plink_1UX4WKJEX18d0sxgPDWSZA3S
 
 ### Stripe TODO
 - [ ] Owner creates $6.99 "Standard shipping" rate in Dashboard -> attach to all 6 links
-- [ ] Owner sets head office address (Settings -> Tax) + tells us their state
-- [ ] Add test tax registration, then enable automatic_tax on all 6 links
+- [ ] Owner activates Stripe Tax + sets head office address (Settings -> Tax). State = VIRGINIA (VA)
+- [ ] Add test VA registration (blocked until Tax is active), then enable automatic_tax on all 6 links
+- [ ] Owner registers for a VA sales tax certificate with Virginia Tax before live sales
 - [ ] After site is live: switch after_completion to redirect to our own thank-you page
 - [ ] Optional: Settings -> Branding (logo/colors) for checkout + invoices
 - [ ] Before going live: recreate products/links in LIVE mode (test objects don't carry over)
