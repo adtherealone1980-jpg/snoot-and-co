@@ -83,6 +83,8 @@ All IDs for THIS account contain "JEX18d0sxg".
 - [ ] After site is live: switch after_completion to redirect to thank-you.html
 - [ ] Optional: Settings -> Branding (logo/colors) for checkout + invoices
 - [ ] Before going live: recreate products/links in LIVE mode (test objects don't carry over)
+- [ ] Before going live (optional): buy a custom domain (~$10-20/yr) and connect it in GitHub Pages.
+      Owner chose to KEEP the free github.io address for now (Nov 2026).
 
 ## Product images
 - Current: AI SAMPLE photos (Higgsfield, gpt_image_2_5, low quality, 0.25 credits each),
