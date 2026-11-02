@@ -84,6 +84,14 @@ All IDs for THIS account contain "JEX18d0sxg".
 - [ ] Optional: Settings -> Branding (logo/colors) for checkout + invoices
 - [ ] Before going live: recreate products/links in LIVE mode (test objects don't carry over)
 
+## Product images
+- Current: AI SAMPLE photos (Higgsfield, gpt_image_2_5, low quality, 0.25 credits each),
+  hot-linked from d8j0ntlcm91z4.cloudfront.net. `sample: true` in products.js shows a
+  "Sample design" label. Same URLs set as Stripe product images (test mode).
+- Cloud sandbox network blocks that CDN, so images are NOT copied into the repo yet.
+- TODO: replace with real Printify mockups (owner uploads in chat) -> save in images/,
+  set image: "images/<key>.jpg" and sample: false, update Stripe product images.
+
 ## Agents
 - `product-researcher` - finds trending products/niches
 - `store-manager` - maintains products, pages, and links

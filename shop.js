@@ -18,6 +18,11 @@ products.forEach(function (product) {
     ? `<img src="${product.image}" alt="${product.name}" loading="lazy">`
     : `<span class="placeholder" aria-hidden="true">${product.emoji}</span>`;
 
+  // "Sample design" label: shown when the photo is an example, not the exact product.
+  const sampleNote = product.image && product.sample
+    ? `<span class="sample-note">Sample design &middot; yours features your pet</span>`
+    : "";
+
   // Badge: only show it if one is set.
   const badge = product.badge ? `<span class="badge">${product.badge}</span>` : "";
 
@@ -27,7 +32,7 @@ products.forEach(function (product) {
     : `<span class="button button-disabled">Coming soon</span>`;
 
   card.innerHTML = `
-    <div class="product-image">${badge}${picture}</div>
+    <div class="product-image">${badge}${picture}${sampleNote}</div>
     <div class="product-info">
       <h3>${product.name}</h3>
       <p>${product.description}</p>
